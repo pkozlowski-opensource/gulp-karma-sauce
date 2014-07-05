@@ -19,6 +19,7 @@ var karmaCommonConf = {
     username: 'hashspace',
     accessKey: '9e47b05c-b1de-43ce-b9f0-dc64a3bc5f35',
     startConnect: false,
+    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
     testName: 'Timeout tests'
   },
   browsers: ['sl_chrome'],
