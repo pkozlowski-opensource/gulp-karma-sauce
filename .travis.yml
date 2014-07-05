@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "0.10"
+
+env:
+  global:
+    - SAUCE_USERNAME=hashspace
+    - BROWSER_PROVIDER_READY_FILE=/tmp/sauce-connect-ready
+    - LOGS_DIR=/tmp/logs
+
+before_install:
+ - npm install --quiet -g gulp
+
+before_script:
+ - mkdir -p $LOGS_DIR
+ - chmod -R 777 ./build/sauce/connect_start.sh
+ - ./build/sauce/connect_start.sh
+ - chmod -R 777 ./build/sauce/connect_wait.sh
+ - ./build/sauce/connect_wait.sh
+
+script:
+ - gulp test
+
+after_failure:
+  - chmod -R 777 ./build/sauce/connect_logs.sh
+  - ./build/sauce/connect_logs.sh
