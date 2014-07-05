@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var _ = require('lodash');
 var karma = require('karma').server;
 
@@ -43,7 +44,7 @@ gulp.task('test', function (done) {
  */
 gulp.task('tdd', function (done) {
   karma.start(karmaCommonConf, function(){
-    console.log(process._getActiveHandles());
+    gutil.log(process._getActiveHandles());
     done();
   });
 });
