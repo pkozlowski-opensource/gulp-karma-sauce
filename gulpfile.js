@@ -43,6 +43,10 @@ gulp.task('test', function (done) {
  */
 gulp.task('tdd', function (done) {
   karma.start(karmaCommonConf, done);
+
+  setTimeout(function(){
+    console.log(process._getActiveHandles());
+  }, 2*60*1000);
 });
 
 gulp.task('default', ['tdd']);
