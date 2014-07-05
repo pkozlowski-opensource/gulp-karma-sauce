@@ -37,15 +37,9 @@ var karmaCommonConf = {
  */
 gulp.task('test', function (done) {
   karma.start(_.assign({}, karmaCommonConf, {singleRun: true}), done);
-});
-
-/**
- * Watch for file changes and re-run tests on each change
- */
-gulp.task('tdd', function (done) {
-  console.log('before Karma - console');
-  gutil.log('before Karma - gutil');
-  throw new Error(process._getActiveHandles());
+  setTimeout(function(){
+    console.log(process._getActiveHandles());
+  }, 2*60*1000);
 });
 
 gulp.task('default', ['tdd']);
