@@ -43,6 +43,8 @@ gulp.task('test', function (done) {
  * Watch for file changes and re-run tests on each change
  */
 gulp.task('tdd', function (done) {
+  console.log('before Karma - console');
+  gutil.log('before Karma - gutil');
   karma.start(karmaCommonConf, function(){
     gutil.log(process._getActiveHandles());
     done();
