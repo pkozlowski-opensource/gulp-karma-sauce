@@ -42,11 +42,10 @@ gulp.task('test', function (done) {
  * Watch for file changes and re-run tests on each change
  */
 gulp.task('tdd', function (done) {
-  karma.start(karmaCommonConf, done);
-
-  setTimeout(function(){
+  karma.start(karmaCommonConf, function(){
     console.log(process._getActiveHandles());
-  }, 2*60*1000);
+    done();
+  });
 });
 
 gulp.task('default', ['tdd']);
