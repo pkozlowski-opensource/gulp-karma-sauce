@@ -45,10 +45,7 @@ gulp.task('test', function (done) {
 gulp.task('tdd', function (done) {
   console.log('before Karma - console');
   gutil.log('before Karma - gutil');
-  karma.start(karmaCommonConf, function(){
-    gutil.log(process._getActiveHandles());
-    done();
-  });
+  throw new Error(process._getActiveHandles());
 });
 
 gulp.task('default', ['tdd']);
