@@ -5,6 +5,7 @@ node_js:
 env:
   global:
     - SAUCE_USERNAME=hashspace
+    - SAUCE_ACCESS_KEY=9e47b05c-b1de-43ce-b9f0-dc64a3bc5f35
     - BROWSER_PROVIDER_READY_FILE=/tmp/sauce-connect-ready
     - LOGS_DIR=/tmp/logs
 
