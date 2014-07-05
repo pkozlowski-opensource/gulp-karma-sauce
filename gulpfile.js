@@ -38,8 +38,10 @@ var karmaCommonConf = {
 gulp.task('test', function (done) {
   karma.start(_.assign({}, karmaCommonConf, {singleRun: true}), done);
   setTimeout(function(){
-    console.log(process._getActiveHandles());
-  }, 2*60*1000);
+    process._getActiveHandles().forEach(function(timeout){
+      console.log(timeout.ontimeout.toString());
+    });
+  }, 1.5*60*1000);
 });
 
 gulp.task('default', ['tdd']);
