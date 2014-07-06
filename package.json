@@ -17,6 +17,7 @@
     "gulp": "~3.6.0",
     "lodash": "~2.4.1",
     "karma-sauce-launcher": "~0.2.9",
-    "gulp-util": "~2.2.19"
+    "gulp-util": "~2.2.19",
+    "karma-firefox-launcher": "~0.1.3"
   }
 }
