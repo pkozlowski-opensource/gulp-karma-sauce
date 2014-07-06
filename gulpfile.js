@@ -23,7 +23,7 @@ var karmaCommonConf = {
     tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
     testName: 'Timeout tests'
   },
-  browsers: ['sl_chrome'],
+  browsers: ['Chrome'],
   frameworks: ['jasmine'],
   files: [
     'src/**/*.js',
@@ -37,13 +37,13 @@ var karmaCommonConf = {
  */
 gulp.task('test', function (done) {
   karma.start(_.assign({}, karmaCommonConf, {singleRun: true}), done);
-  setTimeout(function(){
+  /*setTimeout(function(){
     process._getActiveHandles().forEach(function(timeout){
       if (timeout._idleNext && timeout._idleNext._onTimeout) {
         console.log(timeout._idleNext._onTimeout.toString());
       }
     });
-  }, 1.5*60*1000);
+  }, 1.5*60*1000);*/
 });
 
 gulp.task('default', ['tdd']);
