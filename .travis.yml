@@ -13,6 +13,8 @@ before_install:
  - npm install --quiet -g gulp
 
 before_script:
+ - export DISPLAY=:99.0
+ - sh -e /etc/init.d/xvfb start
  - mkdir -p $LOGS_DIR
  - chmod -R 777 ./build/sauce/connect_start.sh
  - ./build/sauce/connect_start.sh
