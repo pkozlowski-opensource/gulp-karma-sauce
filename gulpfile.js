@@ -23,7 +23,7 @@ var karmaCommonConf = {
     tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
     testName: 'Timeout tests'
   },
-  browsers: ['Firefox'],
+  browsers: ['sl_firefox'],
   frameworks: ['jasmine'],
   files: [
     'src/**/*.js',
